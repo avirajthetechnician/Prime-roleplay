@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vehicles | Prime Roleplay</title>
+<meta name="description" content="Search and filter 250+ vehicles on Prime Roleplay.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">PR</span>
+        <span class="brand-name">PRIME<span> ROLEPLAY</span></span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="servers.html">Servers</a>
+        <a href="about.html">About</a>
+        <a href="features.html">Features</a>
+        <a href="jobs.html">Jobs</a>
+        <a href="businesses.html">Businesses</a>
+        <a href="vehicles.html">Vehicles</a>
+        <a href="events.html">Events</a>
+        <a href="news.html">News</a>
+        <a href="gallery.html">Gallery</a>
+      </div>
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-outline btn-sm">Login</a>
+        <a href="register.html" class="btn btn-primary btn-sm">Play Now</a>
+        <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-panel">
+    <a href="index.html">Home</a>
+    <a href="servers.html">Servers</a>
+    <a href="about.html">About</a>
+    <a href="features.html">Features</a>
+    <a href="jobs.html">Jobs</a>
+    <a href="businesses.html">Businesses</a>
+    <a href="vehicles.html">Vehicles</a>
+    <a href="events.html">Events</a>
+    <a href="news.html">News</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="community.html">Community</a>
+    <a href="rules.html">Rules</a>
+    <a href="support.html">Support</a>
+    <div class="nav-actions">
+      <a href="login.html" class="btn btn-outline btn-block">Login</a>
+      <a href="register.html" class="btn btn-primary btn-block">Play Now</a>
+    </div>
+  </div>
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Home</a> / Vehicles</div>
+      <div class="eyebrow">Garage</div>
+      <h1>250+ vehicles, <span class="grad-text">tuned individually</span></h1>
+      <p class="text-lead">Search by name or filter by category to find your next ride. Every vehicle is handling-tuned rather than sharing one generic profile.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="filter-bar">
+        <div class="filter-tabs">
+          <button class="filter-tab is-active" data-filter="all">All</button>
+          <button class="filter-tab" data-filter="supercars">Supercars</button>
+          <button class="filter-tab" data-filter="sports">Sports</button>
+          <button class="filter-tab" data-filter="suv">SUV</button>
+          <button class="filter-tab" data-filter="sedan">Sedan</button>
+          <button class="filter-tab" data-filter="motorcycles">Motorcycles</button>
+          <button class="filter-tab" data-filter="trucks">Trucks</button>
+        </div>
+        <div class="search-box">
+          <input type="text" id="vehicleSearch" placeholder="Search vehicles...">
+        </div>
+      </div>
+
+      <div class="grid grid-4" id="vehicleGrid">
+
+        <div class="card reveal" data-category="supercars" data-name="Progen Itali GTX" data-price="$285,000" data-speed="212 mph">
+          <div class="card-media"><img src="https://picsum.photos/seed/car1/500/320" alt="Progen Itali GTX supercar"><span class="card-badge badge-blue">Supercar</span></div>
+          <div class="card-body">
+            <h3 class="card-title">Progen Itali GTX</h3>
+            <div class="card-meta"><span>$285,000</span><span>212 mph</span></div>
+            <button class="btn btn-outline btn-sm btn-block" style="margin-top:16px;" data-vehicle-view>View</button>
+          </div>
+        </div>
+
+        <div class="card reveal" data-category="supercars" data-name="Pfister Comet Turbo" data-price="$310,000" data-speed="205 mph">
+          <div class="card-media"><img src="https://picsum.photos/seed/car2/500/320" alt="Pfister Comet Turbo supercar"><span class="card-badge badge-blue">Supercar</span></div>
+          <div class="card-body">
+            <h3 class="card-title">Pfister Comet Turbo</h3>
+            <div class="card-meta"><span>$310,000</span><span>205 mph</span></div>
+            <button class="btn btn-outline btn-sm btn-block" style="margin-top:16px;" data-vehicle-view>View</button>
+          </div>
+        </div>
+
+        <div class="card reveal" data-category="sports" data-name="Bravado Buffalo STX" data-price="$95,000" data-speed="165 mph">
+          <div class="card-media"><img src="https://picsum.photos/seed/car3/500/320" alt="Bravado Buffalo STX sports car"><span class="card-badge badge-cyan">Sports</span></div>
+          <div class="card-body">
+            <h3 class="card-title">Bravado Buffalo STX</h3>
+            <div class="card-meta"><span>$95,000</span><span>165 mph</span></div>
+            <button class="btn btn-outline btn-sm btn-block" style="margin-top:16px;" data-vehicle-view>View</button>
+          </div>
+        </div>
+
+        <div class="card reveal" data-category="sports" data-name="Obey Tailgater S" data-price="$78,000" data-speed="158 mph">
+          <div class="card-media"><img src="https://picsum.photos/seed/car4/500/320" alt="Obey Tailgater S sports sedan"><span class="card-badge badge-cyan">Sports</span></div>
+          <div class="card-body">
+            <h3 class="card-title">Obey Tailgater S</h3>
+            <div class="card-meta"><span>$78,000</span><span>158 mph</span></div>
+            <button class="btn btn-outline btn-sm btn-block" style="margin-top:16px;" data-vehicle-view>View</button>
+          </div>
+        </div>
+
+        <div class="card reveal" data-category="suv" data-name="Gallivanter Baller LE" data-price="$120,000" data-speed="140 mph">
+          <div class="card-media"><img src="https://picsum.photos/seed/car5/500/320" alt="Gallivanter Baller LE SUV"><span class="card-badge badge-green">SUV</span></div>
+          <div class="card-body">
+            <h3 class="card-title">Gallivanter Baller LE</h3>
+            <div class="card-meta"><span>$120,000</span><span>140 mph</span></div>
+            <button class="btn btn-outline btn-sm btn-block" style="margin-top:16px;" data-vehicle-view>View</button>
+          </div>
+        </div>
+
+        <div class="card reveal" data-category="suv" data-name="Vapid Huntley Sport" data-price="$88,000" data-speed="135 mph">
+          <div class="card-media"><img src="https://picsum.photos/seed/car6/500/320" alt="Vapid Huntley Sport SUV"><span class="card-badge badge-green">SUV</span></div>
+          <div class="card-body">
+            <h3 class="card-title">Vapid Huntley Sport</h3>
+            <div class="card-meta"><span>$88,000</span><span>135 mph</span></div>
+            <button class="btn btn-outline btn-sm btn-block" style="margin-top:16px;" data-vehicle-view>View</button>
+          </div>
+        </div>
+
+        <div class="card reveal" data-category="sedan" data-name="Ubermacht Sentinel" data-price="$52,000" data-speed="145 mph">
+          <div class="card-media"><img src="https://picsum.photos/seed/car7/500/320" alt="Ubermacht Sentinel sedan"><span class="card-badge badge-amber">Sedan</span></div>
+          <div class="card-body">
+            <h3 class="card-title">Ubermacht Sentinel</h3>
+            <div class="card-meta"><span>$52,000</span><span>145 mph</span></div>
+            <button class="btn btn-outline btn-sm btn-block" style="margin-top:16px;" data-vehicle-view>View</button>
+          </div>
+        </div>
+
+        <div class="card reveal" data-category="sedan" data-name="Cheval Fugitive" data-price="$38,000" data-speed="130 mph">
+          <div class="card-media"><img src="https://picsum.photos/seed/car8/500/320" alt="Cheval Fugitive sedan"><span class="card-badge badge-amber">Sedan</span></div>
+          <div class="card-body">
+            <h3 class="card-title">Cheval Fugitive</h3>
+            <div class="card-meta"><span>$38,000</span><span>130 mph</span></div>
+            <button class="btn btn-outline btn-sm btn-block" style="margin-top:16px;" data-vehicle-view>View</button>
+          </div>
+        </div>
+
+        <div class="card reveal" data-category="motorcycles" data-name="Western Bagger Chrome" data-price="$32,000" data-speed="130 mph">
+          <div class="card-media"><img src="https://picsum.photos/seed/car9/500/320" alt="Western Bagger Chrome motorcycle"><span class="badge card-badge" style="background:rgba(255,255,255,0.08);">Motorcycle</span></div>
+          <div class="card-body">
+            <h3 class="card-title">Western Bagger Chrome</h3>
+            <div class="card-meta"><span>$32,000</span><span>130 mph</span></div>
+            <button class="btn btn-outline btn-sm btn-block" style="margin-top:16px;" data-vehicle-view>View</button>
+          </div>
+        </div>
+
+        <div class="card reveal" data-category="motorcycles" data-name="Nagasaki Shotaro" data-price="$210,000" data-speed="175 mph">
+          <div class="card-media"><img src="https://picsum.photos/seed/car10/500/320" alt="Nagasaki Shotaro motorcycle"><span class="badge card-badge" style="background:rgba(255,255,255,0.08);">Motorcycle</span></div>
+          <div class="card-body">
+            <h3 class="card-title">Nagasaki Shotaro</h3>
+            <div class="card-meta"><span>$210,000</span><span>175 mph</span></div>
+            <button class="btn btn-outline btn-sm btn-block" style="margin-top:16px;" data-vehicle-view>View</button>
+          </div>
+        </div>
+
+        <div class="card reveal" data-category="trucks" data-name="MTL Flatbed Hauler" data-price="$45,000" data-speed="95 mph">
+          <div class="card-media"><img src="https://picsum.photos/seed/car11/500/320" alt="MTL Flatbed Hauler truck"><span class="badge card-badge" style="background:rgba(255,255,255,0.08);">Truck</span></div>
+          <div class="card-body">
+            <h3 class="card-title">MTL Flatbed Hauler</h3>
+            <div class="card-meta"><span>$45,000</span><span>95 mph</span></div>
+            <button class="btn btn-outline btn-sm btn-block" style="margin-top:16px;" data-vehicle-view>View</button>
+          </div>
+        </div>
+
+        <div class="card reveal" data-category="trucks" data-name="Vapid Hauler Custom" data-price="$68,000" data-speed="88 mph">
+          <div class="card-media"><img src="https://picsum.photos/seed/car12/500/320" alt="Vapid Hauler Custom truck"><span class="badge card-badge" style="background:rgba(255,255,255,0.08);">Truck</span></div>
+          <div class="card-body">
+            <h3 class="card-title">Vapid Hauler Custom</h3>
+            <div class="card-meta"><span>$68,000</span><span>88 mph</span></div>
+            <button class="btn btn-outline btn-sm btn-block" style="margin-top:16px;" data-vehicle-view>View</button>
+          </div>
+        </div>
+
+      </div>
+      <p class="empty-state" id="vehicleEmpty" style="display:none;">No vehicles match your search. Try a different name or category.</p>
+    </div>
+  </section>
+
+  <div class="modal-overlay" id="vehicleModal">
+    <div class="modal-box">
+      <button class="modal-close" aria-label="Close">&times;</button>
+      <img class="modal-media" data-modal-img src="" alt="Vehicle preview">
+      <div class="modal-content">
+        <h3 class="heading-md" data-modal-name style="margin-bottom:10px;"></h3>
+        <div style="display:flex;gap:10px;margin-bottom:16px;">
+          <span class="badge badge-blue" data-modal-category></span>
+        </div>
+        <div class="info-row" style="border-top:none;"><span>Price</span><span data-modal-price></span></div>
+        <div class="info-row"><span>Top Speed</span><span data-modal-speed></span></div>
+        <div style="display:flex;gap:12px;margin-top:24px;">
+          <a href="register.html" class="btn btn-primary btn-block">Buy</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="brand">
+            <span class="brand-mark">PR</span>
+            <span class="brand-name">PRIME<span> ROLEPLAY</span></span>
+          </a>
+          <p>Your story starts here. A living GTA V roleplay city built by its players, one decision at a time.</p>
+          <div class="footer-social">
+            <a href="https://discord.com" target="_blank" rel="noopener" aria-label="Discord">D</a>
+            <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube">Y</a>
+            <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">I</a>
+            <a href="https://x.com" target="_blank" rel="noopener" aria-label="X">X</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Game</h4>
+          <a href="servers.html">Servers</a>
+          <a href="how-to-play.html">How to Play</a>
+          <a href="features.html">Features</a>
+          <a href="jobs.html">Jobs</a>
+          <a href="vehicles.html">Vehicles</a>
+        </div>
+        <div class="footer-col">
+          <h4>Community</h4>
+          <a href="community.html">Discord</a>
+          <a href="news.html">News</a>
+          <a href="events.html">Events</a>
+          <a href="gallery.html">Gallery</a>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <a href="rules.html">Rules</a>
+          <a href="support.html#faq">FAQ</a>
+          <a href="support.html">Support</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Prime Roleplay. Not affiliated with Rockstar Games or Take-Two Interactive.</span>
+        <div class="footer-bottom-links">
+          <a href="support.html">Privacy Policy</a>
+          <a href="support.html">Terms of Service</a>
+          <a href="rules.html">Server Rules</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Back to top">&uarr;</button>
+  <div class="toast-stack"></div>
+  <script src="js/main.js"></script>
+</body>
+</html>

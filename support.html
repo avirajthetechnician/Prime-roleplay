@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support | Prime Roleplay</title>
+<meta name="description" content="FAQ and contact form for Prime Roleplay support.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">PR</span>
+        <span class="brand-name">PRIME<span> ROLEPLAY</span></span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="servers.html">Servers</a>
+        <a href="about.html">About</a>
+        <a href="features.html">Features</a>
+        <a href="jobs.html">Jobs</a>
+        <a href="businesses.html">Businesses</a>
+        <a href="vehicles.html">Vehicles</a>
+        <a href="events.html">Events</a>
+        <a href="news.html">News</a>
+        <a href="gallery.html">Gallery</a>
+      </div>
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-outline btn-sm">Login</a>
+        <a href="register.html" class="btn btn-primary btn-sm">Play Now</a>
+        <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-panel">
+    <a href="index.html">Home</a>
+    <a href="servers.html">Servers</a>
+    <a href="about.html">About</a>
+    <a href="features.html">Features</a>
+    <a href="jobs.html">Jobs</a>
+    <a href="businesses.html">Businesses</a>
+    <a href="vehicles.html">Vehicles</a>
+    <a href="events.html">Events</a>
+    <a href="news.html">News</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="community.html">Community</a>
+    <a href="rules.html">Rules</a>
+    <a href="support.html">Support</a>
+    <div class="nav-actions">
+      <a href="login.html" class="btn btn-outline btn-block">Login</a>
+      <a href="register.html" class="btn btn-primary btn-block">Play Now</a>
+    </div>
+  </div>
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Home</a> / Support</div>
+      <div class="eyebrow">Support Center</div>
+      <h1>We're here to <span class="grad-text">help</span></h1>
+      <p class="text-lead">Browse the FAQ below, or send our support team a ticket directly and we'll follow up by email.</p>
+    </div>
+  </section>
+
+  <section class="section section--tight" id="faq">
+    <div class="container">
+      <div class="grid grid-2" style="gap:60px;align-items:start;">
+        <div class="reveal">
+          <div class="eyebrow">FAQ</div>
+          <h2 class="heading-lg" style="margin-bottom:24px;">Common questions</h2>
+          <div data-accordion-group="single">
+            <div class="accordion-item">
+              <button class="accordion-trigger">How long does whitelist review take?<span class="plus"></span></button>
+              <div class="accordion-panel"><div class="accordion-panel-inner">Most applications are reviewed within 24–48 hours. You'll get an email either way, so check your spam folder if it's been longer.</div></div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-trigger">Can I play on more than one server?<span class="plus"></span></button>
+              <div class="accordion-panel"><div class="accordion-panel-inner">Yes — one account works across all three servers, though your character and progress are separate on each.</div></div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-trigger">I forgot my password. What do I do?<span class="plus"></span></button>
+              <div class="accordion-panel"><div class="accordion-panel-inner">Use "Forgot Password" on the login page. A reset link is sent to your registered email address.</div></div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-trigger">How do I report another player?<span class="plus"></span></button>
+              <div class="accordion-panel"><div class="accordion-panel-inner">Use the contact form to the right with the "Report a Player" category, and include as much detail as you can — timestamps help a lot.</div></div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-trigger">Can I appeal a ban?<span class="plus"></span></button>
+              <div class="accordion-panel"><div class="accordion-panel-inner">Yes. Submit a ticket using the "Ban Appeal" category with your account email and a short explanation.</div></div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-trigger">The server is lagging for me specifically. What should I check?<span class="plus"></span></button>
+              <div class="accordion-panel"><div class="accordion-panel-inner">Try a wired connection and close background applications first. If the issue persists, submit a "Server Issues" ticket with your ping and location.</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass reveal" style="padding:36px;">
+          <h2 class="heading-md" style="margin-bottom:6px;">Contact Support</h2>
+          <p class="text-muted" style="margin-bottom:26px;">Choose a category so your ticket reaches the right team.</p>
+          <form id="supportForm" novalidate>
+            <div class="field">
+              <label for="supportName">Name</label>
+              <input type="text" id="supportName" name="name" placeholder="Your name">
+              <div class="field-error"></div>
+            </div>
+            <div class="field">
+              <label for="supportEmail">Email</label>
+              <input type="email" id="supportEmail" name="email" placeholder="you@example.com">
+              <div class="field-error"></div>
+            </div>
+            <div class="field">
+              <label for="supportCategory">Category</label>
+              <select id="supportCategory" name="category">
+                <option value="">Select a category</option>
+                <option value="server">Server Issues</option>
+                <option value="account">Account Issues</option>
+                <option value="report">Report a Player</option>
+                <option value="appeal">Ban Appeal</option>
+                <option value="other">Other</option>
+              </select>
+              <div class="field-error"></div>
+            </div>
+            <div class="field">
+              <label for="supportMessage">Message</label>
+              <textarea id="supportMessage" name="message" placeholder="Describe the issue, including any relevant timestamps or names."></textarea>
+              <div class="field-error"></div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Submit Request</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt section--bordered">
+    <div class="container">
+      <div class="section-head center reveal">
+        <div class="eyebrow">Response Times</div>
+        <h2 class="heading-lg">What to expect after you submit</h2>
+      </div>
+      <div class="grid grid-4">
+        <div class="feature-card reveal"><h3 class="card-title">Server Issues</h3><p class="card-desc">Typically answered within a few hours during peak times.</p></div>
+        <div class="feature-card reveal"><h3 class="card-title">Account Issues</h3><p class="card-desc">Usually resolved within one business day.</p></div>
+        <div class="feature-card reveal"><h3 class="card-title">Report a Player</h3><p class="card-desc">Reviewed by moderation within 24–48 hours.</p></div>
+        <div class="feature-card reveal"><h3 class="card-title">Ban Appeal</h3><p class="card-desc">Reviewed by senior staff within 3–5 business days.</p></div>
+      </div>
+    </div>
+  </section>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="brand">
+            <span class="brand-mark">PR</span>
+            <span class="brand-name">PRIME<span> ROLEPLAY</span></span>
+          </a>
+          <p>Your story starts here. A living GTA V roleplay city built by its players, one decision at a time.</p>
+          <div class="footer-social">
+            <a href="https://discord.com" target="_blank" rel="noopener" aria-label="Discord">D</a>
+            <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube">Y</a>
+            <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">I</a>
+            <a href="https://x.com" target="_blank" rel="noopener" aria-label="X">X</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Game</h4>
+          <a href="servers.html">Servers</a>
+          <a href="how-to-play.html">How to Play</a>
+          <a href="features.html">Features</a>
+          <a href="jobs.html">Jobs</a>
+          <a href="vehicles.html">Vehicles</a>
+        </div>
+        <div class="footer-col">
+          <h4>Community</h4>
+          <a href="community.html">Discord</a>
+          <a href="news.html">News</a>
+          <a href="events.html">Events</a>
+          <a href="gallery.html">Gallery</a>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <a href="rules.html">Rules</a>
+          <a href="support.html#faq">FAQ</a>
+          <a href="support.html">Support</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Prime Roleplay. Not affiliated with Rockstar Games or Take-Two Interactive.</span>
+        <div class="footer-bottom-links">
+          <a href="support.html">Privacy Policy</a>
+          <a href="support.html">Terms of Service</a>
+          <a href="rules.html">Server Rules</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Back to top">&uarr;</button>
+  <div class="toast-stack"></div>
+  <script src="js/main.js"></script>
+</body>
+</html>

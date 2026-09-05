@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login | Prime Roleplay</title>
+<meta name="description" content="Log in to your Prime Roleplay account.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">PR</span>
+        <span class="brand-name">PRIME<span> ROLEPLAY</span></span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="servers.html">Servers</a>
+        <a href="about.html">About</a>
+        <a href="features.html">Features</a>
+        <a href="jobs.html">Jobs</a>
+        <a href="businesses.html">Businesses</a>
+        <a href="vehicles.html">Vehicles</a>
+        <a href="events.html">Events</a>
+        <a href="news.html">News</a>
+        <a href="gallery.html">Gallery</a>
+      </div>
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-outline btn-sm">Login</a>
+        <a href="register.html" class="btn btn-primary btn-sm">Play Now</a>
+        <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-panel">
+    <a href="index.html">Home</a>
+    <a href="servers.html">Servers</a>
+    <a href="about.html">About</a>
+    <a href="features.html">Features</a>
+    <a href="jobs.html">Jobs</a>
+    <a href="businesses.html">Businesses</a>
+    <a href="vehicles.html">Vehicles</a>
+    <a href="events.html">Events</a>
+    <a href="news.html">News</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="community.html">Community</a>
+    <a href="rules.html">Rules</a>
+    <a href="support.html">Support</a>
+    <div class="nav-actions">
+      <a href="login.html" class="btn btn-outline btn-block">Login</a>
+      <a href="register.html" class="btn btn-primary btn-block">Play Now</a>
+    </div>
+  </div>
+  <section class="auth-wrap">
+    <div class="auth-particles"></div>
+    <div class="auth-card glass">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">PR</span>
+        <span class="brand-name">PRIME<span> ROLEPLAY</span></span>
+      </a>
+      <div class="auth-head">
+        <h1 class="heading-md">Welcome back</h1>
+        <p>Log in to manage your account and connect to the city.</p>
+      </div>
+      <form id="loginForm" novalidate>
+        <div class="field">
+          <label for="loginEmail">Email</label>
+          <input type="email" id="loginEmail" name="email" placeholder="you@example.com">
+          <div class="field-error"></div>
+        </div>
+        <div class="field">
+          <label for="loginPassword">Password</label>
+          <input type="password" id="loginPassword" name="password" placeholder="••••••••">
+          <div class="field-error"></div>
+        </div>
+        <div class="form-row">
+          <label class="checkbox-row"><input type="checkbox" name="remember"> Remember me</label>
+          <a href="support.html">Forgot password?</a>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Login</button>
+      </form>
+      <div class="auth-foot">Don't have an account? <a href="register.html">Register</a></div>
+    </div>
+  </section>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="brand">
+            <span class="brand-mark">PR</span>
+            <span class="brand-name">PRIME<span> ROLEPLAY</span></span>
+          </a>
+          <p>Your story starts here. A living GTA V roleplay city built by its players, one decision at a time.</p>
+          <div class="footer-social">
+            <a href="https://discord.com" target="_blank" rel="noopener" aria-label="Discord">D</a>
+            <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube">Y</a>
+            <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">I</a>
+            <a href="https://x.com" target="_blank" rel="noopener" aria-label="X">X</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Game</h4>
+          <a href="servers.html">Servers</a>
+          <a href="how-to-play.html">How to Play</a>
+          <a href="features.html">Features</a>
+          <a href="jobs.html">Jobs</a>
+          <a href="vehicles.html">Vehicles</a>
+        </div>
+        <div class="footer-col">
+          <h4>Community</h4>
+          <a href="community.html">Discord</a>
+          <a href="news.html">News</a>
+          <a href="events.html">Events</a>
+          <a href="gallery.html">Gallery</a>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <a href="rules.html">Rules</a>
+          <a href="support.html#faq">FAQ</a>
+          <a href="support.html">Support</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Prime Roleplay. Not affiliated with Rockstar Games or Take-Two Interactive.</span>
+        <div class="footer-bottom-links">
+          <a href="support.html">Privacy Policy</a>
+          <a href="support.html">Terms of Service</a>
+          <a href="rules.html">Server Rules</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Back to top">&uarr;</button>
+  <div class="toast-stack"></div>
+  <script src="js/main.js"></script>
+</body>
+</html>
