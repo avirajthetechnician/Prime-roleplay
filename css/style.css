@@ -1,0 +1,3 @@
+/* Prime Roleplay compatibility stylesheet.
+   Existing pages reference css/style.css while the canonical stylesheet lives at ../style.css. */
+@import url('../style.css');
