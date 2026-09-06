@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profile | Prime Roleplay</title>
+<meta name="description" content="Manage your Prime Roleplay profile, avatar, email and in-game name.">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/profile.css">
+</head>
+<body>
+<nav class="navbar is-scrolled"><div class="container"><a href="index.html" class="brand"><span class="brand-mark">PR</span><span class="brand-name">PRIME<span> ROLEPLAY</span></span></a><div class="nav-links"><a href="index.html">Home</a><a href="servers.html">Servers</a><a href="about.html">About</a><a href="features.html">Features</a><a href="jobs.html">Jobs</a><a href="businesses.html">Businesses</a><a href="vehicles.html">Vehicles</a><a href="events.html">Events</a><a href="news.html">News</a><a href="gallery.html">Gallery</a><a href="forum.html">Forum</a></div><div class="nav-actions"><a href="profile.html" class="btn btn-outline btn-sm profile-nav">Profile</a><a href="forum.html" class="btn btn-primary btn-sm">Forum</a><button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button></div></div></nav>
+<div class="mobile-panel"><a href="index.html">Home</a><a href="servers.html">Servers</a><a href="about.html">About</a><a href="features.html">Features</a><a href="jobs.html">Jobs</a><a href="businesses.html">Businesses</a><a href="vehicles.html">Vehicles</a><a href="events.html">Events</a><a href="news.html">News</a><a href="gallery.html">Gallery</a><a href="forum.html">Forum</a><a href="community.html">Community</a><a href="rules.html">Rules</a><a href="support.html">Support</a></div>
+<header class="page-hero profile-hero"><div class="container"><div class="breadcrumb"><a href="index.html">Home</a> / Profile</div><div class="eyebrow">Prime Account</div><h1>Your <span class="grad-text">Profile</span></h1><p class="text-lead">Manage how you appear across the Prime Roleplay community and in-game.</p></div></header>
+<main class="section profile-page"><div class="container"><div id="profileLoading" class="profile-message">Loading your profile...</div><section id="profileContent" class="profile-layout" hidden>
+<div class="profile-card profile-sidebar"><div class="avatar-wrap"><img id="profileAvatar" class="profile-avatar" alt="Profile picture"><label class="avatar-upload btn btn-outline btn-sm" for="avatarInput">Change PFP</label><input id="avatarInput" type="file" accept="image/png,image/jpeg,image/webp,image/gif" hidden></div><h2 id="profileUsername" class="heading-md">Username</h2><span class="profile-role">EN1 PLAYER</span><p id="profileJoined" class="text-muted profile-joined"></p><button id="signOutBtn" class="btn btn-outline btn-block">Log Out</button></div>
+<div class="profile-card profile-settings"><div class="eyebrow">Account Settings</div><h2 class="heading-md">Edit your profile</h2><p class="text-muted settings-intro">Update the information other Prime members can see. Changes are saved directly to your Prime profile.</p><form id="profileForm"><div class="profile-field"><label for="profileEmail">Email</label><input id="profileEmail" type="email" placeholder="you@example.com" autocomplete="email"><small>No verification is required for this profile email.</small></div><div class="profile-field"><label for="profileIngame">In-Game Name</label><input id="profileIngame" type="text" maxlength="80" placeholder="Your EN1 character / in-game name" autocomplete="off"><small>This is the name you use in the Prime Roleplay city.</small></div><button id="saveProfileBtn" class="btn btn-primary" type="submit">Save Changes</button><p id="profileMessage" class="profile-message" role="status" aria-live="polite"></p></form></div>
+</section></div></main>
+<footer class="site-footer"><div class="container"><div class="footer-bottom"><span>© 2026 Prime Roleplay. Not affiliated with Rockstar Games or Take-Two Interactive.</span><span>EN1 · Built for the community.</span></div></div></footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="supabase-config.js"></script><script src="supabase-client.js"></script><script src="js/main.js"></script><script src="js/profile.js"></script>
+</body></html>
