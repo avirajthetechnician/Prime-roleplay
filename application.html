@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Application | Prime Roleplay</title>
+<link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/forum.css">
+<style>
+.application-detail{min-height:65vh;padding-top:120px}.detail-card{max-width:900px;margin:30px auto;padding:34px;border:1px solid rgba(255,255,255,.08);background:rgba(11,18,32,.88);border-radius:16px}.detail-top{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;flex-wrap:wrap}.detail-card h1{margin:10px 0}.detail-status{display:inline-flex;padding:7px 12px;border-radius:999px;background:rgba(22,119,255,.12);color:var(--blue-light);font-size:12px;font-weight:700}.detail-meta{color:var(--muted);margin:8px 0 26px}.detail-body{white-space:pre-wrap;line-height:1.85;color:#dce5f2;font-size:16px;border-top:1px solid rgba(255,255,255,.07);padding-top:26px}.detail-actions{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap}.detail-message{text-align:center;color:var(--muted);padding:50px 20px}.hidden{display:none!important}
+</style>
+</head>
+<body>
+<nav class="navbar is-scrolled"><div class="container"><a href="index.html" class="brand"><span class="brand-mark">PR</span><span class="brand-name">PRIME<span> ROLEPLAY</span></span></a><div class="nav-links"><a href="index.html">Home</a><a href="servers.html">Servers</a><a href="about.html">About</a><a href="features.html">Features</a><a href="jobs.html">Jobs</a><a href="businesses.html">Businesses</a><a href="vehicles.html">Vehicles</a><a href="events.html">Events</a><a class="active" href="forum.html">Forum</a></div><div class="nav-actions"><a href="login.html" class="btn btn-outline btn-sm">Login</a><a href="register.html" class="btn btn-primary btn-sm">Join Prime</a><button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button></div></div></nav>
+<main class="application-detail"><div class="container"><div id="applicationLoading" class="detail-message">Loading application...</div><article id="applicationCard" class="detail-card hidden"><div class="detail-top"><div><div class="eyebrow">Prime Roleplay · EN1 · Leader Application</div><h1 id="applicationTitle">Application</h1><div id="applicationMeta" class="detail-meta"></div></div><span id="applicationStatus" class="detail-status"></span></div><div id="applicationBody" class="detail-body"></div><div class="detail-actions"><a href="applications.html" class="btn btn-outline">← All Applications</a><a href="applications.html" class="btn btn-primary">+ New Application</a></div></article><div id="applicationError" class="detail-message hidden"></div></div></main>
+<footer class="footer"><div class="container"><div class="footer-bottom"><span>© 2026 Prime Roleplay</span><span>EN1 · Built for the community.</span></div></div></footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="supabase-config.js"></script><script src="supabase-client.js"></script><script src="js/main.js"></script><script src="js/auth-nav.js"></script>
+<script>
+(() => {
+  const sb=window.primeSupabase, id=new URLSearchParams(location.search).get('id');
+  const $=x=>document.getElementById(x);
+  const esc=v=>String(v??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
+  async function load(){
+    if(!sb||!id){$('applicationLoading').classList.add('hidden');$('applicationError').classList.remove('hidden');$('applicationError').textContent=!id?'Application not found.':'Supabase is not configured.';return;}
+    const {data:a,error}=await sb.from('org_leader_applications').select('id,organization_name,organization_slug,status,answers,created_at,applicant_id').eq('id',id).maybeSingle();
+    if(error||!a){$('applicationLoading').classList.add('hidden');$('applicationError').classList.remove('hidden');$('applicationError').textContent=error?.message||'Application not found or you do not have access to it.';return;}
+    const answer=typeof a.answers==='object'?(a.answers.application||a.answers.summary||''):String(a.answers||'');
+    const status=String(a.status||'pending').replaceAll('_',' ').toUpperCase();
+    $('applicationTitle').textContent=a.organization_name||'Unassigned Application';
+    $('applicationMeta').textContent=`Posted ${new Date(a.created_at).toLocaleString()} · EN1`;
+    $('applicationStatus').textContent=status;
+    $('applicationBody').textContent=answer||'No application text was provided.';
+    $('applicationLoading').classList.add('hidden');$('applicationCard').classList.remove('hidden');
+  }
+  load();
+})();
+</script>
+</body></html>
