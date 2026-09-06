@@ -2,11 +2,8 @@
   const sb = window.primeSupabase;
   const categories = [
     {slug:'announcements', name:'Announcements', icon:'01', description:'Official Prime Roleplay news, updates and maintenance.'},
-    {slug:'general', name:'General Discussion', icon:'02', description:'Talk about the city, community and anything Prime.'},
-    {slug:'roleplay', name:'Roleplay', icon:'03', description:'Characters, stories, factions and in-city discussion.'},
-    {slug:'guides', name:'Guides & Tutorials', icon:'04', description:'Share tips and learn how to master the city.'},
-    {slug:'support', name:'Support', icon:'05', description:'Questions, technical help and account support.'},
-    {slug:'suggestions', name:'Suggestions', icon:'06', description:'Ideas that could make Prime Roleplay better.'}
+    {slug:'applications', name:'Applications', icon:'02', description:'Leader applications for Prime Roleplay organizations.', link:'applications.html'},
+    {slug:'complaints', name:'Complaints', icon:'03', description:'Submit complaints against administrators or players.', complaints:true}
   ];
   const $ = id => document.getElementById(id);
   const list = $('threadList'), cats = $('forumCategories'), status = $('forumStatus');
@@ -18,8 +15,15 @@
   function timeAgo(date){ const s=Math.max(1,Math.floor((Date.now()-new Date(date))/1000)); if(s<60)return `${s}s ago`; const m=Math.floor(s/60); if(m<60)return `${m}m ago`; const h=Math.floor(m/60); if(h<24)return `${h}h ago`; return `${Math.floor(h/24)}d ago`; }
 
   function renderCategories(){
-    cats.innerHTML = categories.map(c=>`<button class="forum-category" data-category="${c.slug}"><span class="cat-icon">${c.icon}</span><h3>${c.name}</h3><p>${c.description}</p></button>`).join('');
-    cats.querySelectorAll('[data-category]').forEach(b=>b.addEventListener('click',()=>filter(b.dataset.category)));
+    cats.innerHTML = categories.map(c=>{
+      const extra = c.complaints ? `<div class="complaint-subcategories"><a href="complaints.html?type=administrator" class="complaint-option" onclick="event.stopPropagation()">Complaints against administrators</a><a href="complaints.html?type=player" class="complaint-option" onclick="event.stopPropagation()">Complaints against players</a></div>` : '';
+      return `<button class="forum-category${c.complaints?' forum-category-complaints':''}" data-category="${c.slug}"><span class="cat-icon">${c.icon}</span><h3>${c.name}</h3><p>${c.description}</p>${extra}</button>`;
+    }).join('');
+    cats.querySelectorAll('[data-category]').forEach(b=>b.addEventListener('click',()=>{
+      const category = categories.find(c=>c.slug===b.dataset.category);
+      if(category?.link){ location.href=category.link; return; }
+      filter(b.dataset.category);
+    }));
   }
 
   function render(data=threads){
