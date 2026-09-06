@@ -4,48 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Forum | Prime Roleplay</title>
-<meta name="description" content="Prime Roleplay community forum — announcements, roleplay discussion, guides and support.">
+<meta name="description" content="Prime Roleplay community forum — discussions, applications, announcements, roleplay and support.">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/forum.css">
 </head>
 <body>
-<nav class="navbar is-scrolled">
-  <div class="container">
-    <a href="index.html" class="brand"><span class="brand-mark">PR</span><span class="brand-name">PRIME<span> ROLEPLAY</span></span></a>
-    <div class="nav-links">
-      <a href="index.html">Home</a><a href="servers.html">Servers</a><a href="about.html">About</a><a href="features.html">Features</a><a href="jobs.html">Jobs</a><a href="businesses.html">Businesses</a><a href="vehicles.html">Vehicles</a><a href="events.html">Events</a><a href="news.html">News</a><a class="active" href="forum.html">Forum</a>
-    </div>
-    <div class="nav-actions"><a href="login.html" class="btn btn-outline btn-sm" id="forumLogin">Login</a><a href="register.html" class="btn btn-primary btn-sm" id="forumPlay">Join Prime</a><button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button></div>
-  </div>
-</nav>
-<div class="mobile-panel">
-  <a href="index.html">Home</a><a href="servers.html">Servers</a><a href="about.html">About</a><a href="features.html">Features</a><a href="jobs.html">Jobs</a><a href="businesses.html">Businesses</a><a href="vehicles.html">Vehicles</a><a href="events.html">Events</a><a href="news.html">News</a><a class="active" href="forum.html">Forum</a><a href="community.html">Community</a><a href="rules.html">Rules</a><a href="support.html">Support</a>
-</div>
-
-<header class="page-hero forum-hero"><div class="container"><div class="eyebrow">Prime Community</div><h1>The <span class="grad-text">Forum</span></h1><p class="text-lead">Announcements, roleplay stories, guides, faction discussion and a place for the whole city to talk.</p></div></header>
-
-<main class="section forum-page">
-<div class="container">
-  <div class="forum-toolbar">
-    <div><h2 class="heading-md">Community discussions</h2><p class="text-muted" id="forumStatus">Loading the latest discussions...</p></div>
-    <div class="forum-actions"><input id="forumSearch" class="forum-input" type="search" placeholder="Search discussions..."><button id="newThreadBtn" class="btn btn-primary btn-sm">New Discussion</button></div>
-  </div>
-
+<nav class="navbar is-scrolled"><div class="container"><a href="index.html" class="brand"><span class="brand-mark">PR</span><span class="brand-name">PRIME<span> ROLEPLAY</span></span></a><div class="nav-links"><a href="index.html">Home</a><a href="servers.html">Servers</a><a href="about.html">About</a><a href="features.html">Features</a><a href="jobs.html">Jobs</a><a href="businesses.html">Businesses</a><a href="vehicles.html">Vehicles</a><a href="events.html">Events</a><a class="active" href="forum.html">Forum</a></div><div class="nav-actions"><a href="login.html" class="btn btn-outline btn-sm" id="forumLogin">Login</a><a href="register.html" class="btn btn-primary btn-sm" id="forumPlay">Join Prime</a><button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button></div></div></nav>
+<div class="mobile-panel"><a href="index.html">Home</a><a href="servers.html">Servers</a><a href="about.html">About</a><a href="features.html">Features</a><a href="jobs.html">Jobs</a><a href="businesses.html">Businesses</a><a href="vehicles.html">Vehicles</a><a href="events.html">Events</a><a href="news.html">News</a><a class="active" href="forum.html">Forum</a><a href="community.html">Community</a><a href="rules.html">Rules</a><a href="support.html">Support</a></div>
+<header class="page-hero forum-hero"><div class="container"><div class="eyebrow">Prime Community</div><h1>The <span class="grad-text">Forum</span></h1><p class="text-lead">Announcements, roleplay stories, guides, faction discussion, leader applications and a place for the whole city to talk.</p></div></header>
+<main class="section forum-page"><div class="container">
+  <div class="forum-toolbar"><div><h2 class="heading-md">Community discussions</h2><p class="text-muted" id="forumStatus">Loading the latest discussions...</p></div><div class="forum-actions"><input id="forumSearch" class="forum-input" type="search" placeholder="Search discussions..."><button id="newThreadBtn" class="btn btn-primary btn-sm">New Discussion</button></div></div>
   <div id="forumNotice" class="forum-notice" hidden></div>
+  <section class="applications-panel"><div class="applications-copy"><div class="eyebrow">Organization Center</div><h2 class="heading-md">Leader <span class="grad-text">Applications</span></h2><p>Official applications for leadership positions in Prime Roleplay organizations are posted and reviewed here.</p><div class="application-meta"><span>EN1</span><span>Staff Reviewed</span><span>Official Applications</span></div></div><a href="applications.html" class="btn btn-primary">View Applications</a></section>
   <div id="forumCategories" class="forum-categories"></div>
   <section class="forum-panel"><div class="forum-panel-head"><span>Latest discussions</span><span>Activity</span></div><div id="threadList" class="thread-list"><div class="forum-loading">Loading forum data...</div></div></section>
-</div>
-</main>
-
-<div id="threadModal" class="forum-modal" hidden>
-  <div class="forum-modal-card"><button class="forum-close" id="closeThreadModal">×</button><div class="eyebrow">Community</div><h2 class="heading-md">Start a discussion</h2><p class="text-muted">You need a Prime account to create a discussion.</p><form id="threadForm"><label>Title<input id="threadTitle" required maxlength="140" placeholder="What do you want to discuss?"></label><label>Category<select id="threadCategory" required></select></label><label>Message<textarea id="threadBody" required maxlength="10000" rows="7" placeholder="Write your post..."></textarea></label><button class="btn btn-primary btn-block" type="submit">Publish Discussion</button><p id="threadFormMessage" class="form-message"></p></form></div>
-</div>
-
+</div></main>
+<div id="threadModal" class="forum-modal" hidden><div class="forum-modal-card"><button class="forum-close" id="closeThreadModal">×</button><div class="eyebrow">Community</div><h2 class="heading-md">Start a discussion</h2><p class="text-muted">You need a Prime account to create a discussion.</p><form id="threadForm"><label>Title<input id="threadTitle" required maxlength="140" placeholder="What do you want to discuss?"></label><label>Category<select id="threadCategory" required></select></label><label>Message<textarea id="threadBody" required maxlength="10000" rows="7" placeholder="Write your post..."></textarea></label><button class="btn btn-primary btn-block" type="submit">Publish Discussion</button><p id="threadFormMessage" class="form-message"></p></form></div></div>
 <footer class="footer"><div class="container"><div class="footer-bottom"><span>© 2026 Prime Roleplay</span><span>Built for the community.</span></div></div></footer>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="supabase-config.js"></script>
-<script src="supabase-client.js"></script>
-<script src="js/main.js"></script>
-<script src="js/forum.js"></script>
-</body>
-</html>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="supabase-config.js"></script><script src="supabase-client.js"></script><script src="js/main.js"></script><script src="js/forum.js"></script>
+</body></html>
