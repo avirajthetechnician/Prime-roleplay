@@ -2,7 +2,25 @@
   const sb = window.primeSupabase;
   const $ = id => document.getElementById(id);
   const esc = v => String(v ?? '').replace(/[&<>'"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
-  const orgNames = {police:'Police Department',ems:'Emergency Medical Services',government:'Government',mechanic:'Mechanic Organization',news:'News Organization',other:'Other'};
+  const orgNames = {
+    sahp:'SAHP', lspd:'LSPD', ng:'NG', li:'LI', ballas:'Ballas',
+    'marabunta-grande':'Marabunta Grande', vagos:'Vagos', families:'Families', bloods:'Bloods'
+  };
+  let currentRole = 'player';
+
+  async function loadRole(userId) {
+    const { data } = await sb.from('profiles').select('role').eq('id', userId).maybeSingle();
+    currentRole = data?.role || 'player';
+    if (currentRole === 'admin') {
+      $('organization')?.removeAttribute('required');
+      const label = document.querySelector('label[for="organization"]');
+      if (label) label.textContent = 'Organization (optional for admins)';
+      const help = document.createElement('small');
+      help.className = 'text-muted';
+      help.textContent = 'Admins can leave this as “Select an organization” to submit an unassigned application.';
+      $('organization')?.insertAdjacentElement('afterend', help);
+    }
+  }
 
   async function loadApplications() {
     const grid = $('applicationsGrid');
@@ -23,20 +41,32 @@
     if (!user) { location.href = 'login.html?redirect=applications.html'; return; }
     const slug = $('organization').value;
     const text = $('applicationAnswers').value.trim();
-    if (!slug || !text) { msg.textContent = 'Please select an organization and complete your application.'; return; }
+    if (!text) { msg.textContent = 'Complete your application before submitting.'; return; }
+    if (!slug && currentRole !== 'admin') { msg.textContent = 'Please select an organization and complete your application.'; return; }
+    const applicationSlug = slug || 'unassigned';
+    const applicationName = slug ? (orgNames[slug] || slug) : 'Unassigned';
     const button = e.currentTarget.querySelector('button[type="submit"]');
     if (button) { button.disabled = true; button.textContent = 'Submitting...'; }
     const { error } = await sb.from('org_leader_applications').insert({
       applicant_id: user.id,
-      organization_name: orgNames[slug] || slug,
-      organization_slug: slug,
+      organization_name: applicationName,
+      organization_slug: applicationSlug,
       answers: { application: text }
     });
     if (button) { button.disabled = false; button.textContent = 'Submit Application'; }
     if (error) { msg.textContent = error.message; return; }
     $('applicationAnswers').value = '';
-    msg.textContent = 'Application submitted successfully. Staff will review it before publication.';
+    msg.textContent = applicationSlug === 'unassigned'
+      ? 'Unassigned application submitted successfully. Staff will review it.'
+      : 'Application submitted successfully. Staff will review it before publication.';
   });
 
-  loadApplications();
+  async function init() {
+    if (!sb) { loadApplications(); return; }
+    const { data: { user } } = await sb.auth.getUser();
+    if (user) await loadRole(user.id);
+    await loadApplications();
+  }
+
+  init();
 })();
