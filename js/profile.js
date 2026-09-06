@@ -3,7 +3,6 @@
   const sb = window.primeSupabase;
   const $ = id => document.getElementById(id);
   const setMessage = (text, error = false) => { const el = $('profileMessage'); if (el) { el.textContent = text; el.style.color = error ? '#ff6b7a' : 'var(--blue-light)'; } };
-  const escapeName = value => String(value || 'Prime Member').replace(/[&<>'"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
   const fallbackAvatar = username => `https://ui-avatars.com/api/?name=${encodeURIComponent(username || 'Prime Member')}&background=1677ff&color=ffffff&bold=true&size=256`;
 
   async function loadProfile() {
@@ -11,17 +10,15 @@
     const { data: { user } } = await sb.auth.getUser();
     if (!user) { location.href = `login.html?redirect=${encodeURIComponent('profile.html')}`; return; }
 
-    let { data: profile, error } = await sb.from('profiles').select('id,username,display_name,avatar_url,pfp_url,contact_email,ingame_name,role,created_at').eq('id', user.id).maybeSingle();
+    const { data: profile, error } = await sb.from('profiles').select('id,username,display_name,avatar_url,pfp_url,contact_email,ingame_name,ingame_id,role,created_at').eq('id', user.id).maybeSingle();
     if (error) { $('profileLoading').textContent = error.message; return; }
-    if (!profile) {
-      $('profileLoading').textContent = 'Profile could not be found.';
-      return;
-    }
+    if (!profile) { $('profileLoading').textContent = 'Profile could not be found.'; return; }
 
     const username = profile.username || user.user_metadata?.username || 'Prime Member';
     $('profileUsername').textContent = username;
     $('profileEmail').value = profile.contact_email || user.email || '';
     $('profileIngame').value = profile.ingame_name || '';
+    $('profileIngameId').value = profile.ingame_id || '';
     $('profileJoined').textContent = profile.created_at ? `Member since ${new Date(profile.created_at).toLocaleDateString()}` : 'Prime Member';
     $('profileAvatar').src = profile.pfp_url || profile.avatar_url || fallbackAvatar(username);
     $('profileAvatar').onerror = () => { $('profileAvatar').src = fallbackAvatar(username); };
@@ -36,10 +33,12 @@
     if (!user) return location.href = `login.html?redirect=${encodeURIComponent('profile.html')}`;
     const email = $('profileEmail').value.trim();
     const ingame = $('profileIngame').value.trim();
+    const ingameId = $('profileIngameId').value.trim();
     if (email && !/^\S+@\S+\.\S+$/.test(email)) return setMessage('Enter a valid email address.', true);
+    if (ingameId && !/^\d+$/.test(ingameId)) return setMessage('In-Game ID must contain numbers only.', true);
     const button = $('saveProfileBtn');
     button.disabled = true; button.textContent = 'Saving...';
-    const { error } = await sb.from('profiles').update({ contact_email: email || null, ingame_name: ingame || null, updated_at: new Date().toISOString() }).eq('id', user.id);
+    const { error } = await sb.from('profiles').update({ contact_email: email || null, ingame_name: ingame || null, ingame_id: ingameId || null, updated_at: new Date().toISOString() }).eq('id', user.id);
     button.disabled = false; button.textContent = 'Save Changes';
     if (error) return setMessage(error.message, true);
     setMessage('Profile saved successfully.');
